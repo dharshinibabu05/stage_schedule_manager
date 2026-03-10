@@ -1,0 +1,81 @@
+/* ===== Dashboard Container ===== */
+.dashboard-container {
+  padding: 20px 30px;
+  font-family: 'Poppins', sans-serif;
+  background: #0f0f1a; /* dark background */
+  min-height: 100vh;
+  color: #fff; /* default text color */
+  margin-top: 0;
+
+}
+
+/* ===== Dashboard Cards ===== */
+.dashboard-card {
+  color: #fff; /* ensures text is visible */
+  padding: 25px;
+  border-radius: 18px;
+  text-align: center;
+  cursor: pointer;
+  background: linear-gradient(145deg, rgba(50,20,80,0.95), rgba(80,10,120,0.95));
+  box-shadow: 0 8px 20px rgba(255,0,255,0.3), 0 0 15px rgba(0,255,255,0.2);
+  transition: all 0.4s ease;
+  border: 1px solid rgba(255,255,255,0.15);
+}
+
+.dashboard-card:hover {
+  transform: translateY(-12px) scale(1.05);
+  box-shadow: 0 15px 40px rgba(255,0,255,0.6), 0 0 25px rgba(0,255,255,0.5);
+  background: linear-gradient(145deg, rgba(80,30,120,0.95), rgba(120,10,160,0.95));
+}
+
+/* Card Headings */
+.dashboard-card h3 {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #ff5cff; /* neon pink for pop */
+}
+
+.dashboard-card p {
+  font-size: 14px;
+  color: #e0e0ff; /* light text for better visibility */
+  opacity: 0.9;
+}
+
+/* ===== Performance Timeline ===== */
+.performance-list {
+  background: rgba(30,30,60,0.95);
+  padding: 25px;
+  border-radius: 18px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+  margin-top: 30px;
+  border-left: 4px solid #ff00ff; /* neon accent */
+}
+
+/* Timeline Items */
+.performance-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  color: #fff; /* text visible */
+}
+
+.performance-item:last-child {
+  border-bottom: none;
+}
+
+.performance-item:hover {
+  transform: translateX(8px);
+  background: linear-gradient(90deg, rgba(255,0,255,0.1), rgba(0,255,255,0.1));
+  box-shadow: 0 4px 20px rgba(255,0,255,0.3);
+}
+
+/* Timeline Text */
+.performance-item span {
+  color: #fff; /* ensures timeline text is visible */
+  font-weight: 500;
+}
