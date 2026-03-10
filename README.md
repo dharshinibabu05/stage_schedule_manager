@@ -109,10 +109,13 @@ server/
 ### Backend
 
 cd server  
-https://www.figma.com/design/MCxr22FOr8Lu4XiLFMjOeJ/Untitled?node-id=0-1&t=xAN79oUc9MJHxB2R-1
 npm run dev 
 
 ### Frontend
 
 cd client  
 npm start
+
+### Figma
+https://www.figma.com/design/MCxr22FOr8Lu4XiLFMjOeJ/Untitled?node-id=0-1&t=xAN79oUc9MJHxB2R-1
+
