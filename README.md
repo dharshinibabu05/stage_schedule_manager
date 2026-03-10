@@ -11,7 +11,7 @@ Authentication: JWT
 ---
 
 # 📁 Project Structure
-
+```
 ## Frontend Structure
 
 client/
