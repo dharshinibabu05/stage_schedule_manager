@@ -5,7 +5,7 @@ const {
   getUserById,
   updateUser,
   deleteUser,
-} = require("../controllers/Usercontroller");
+} = require("../controllers/usercontroller");
 const { protect, authorize } = require("../middleware/authMiddleware");
 
 router.route("/")

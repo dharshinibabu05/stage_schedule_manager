@@ -6,7 +6,7 @@ const {
   getEventById,
   updateEvent,
   deleteEvent,
-} = require("../controllers/EventController");
+} = require("../controllers/eventcontroller");
 const { protect, authorize } = require("../middleware/authMiddleware");
 
 router.route("/")
