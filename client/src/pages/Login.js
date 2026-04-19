@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "./Auth.css";
+import "../styles/Auth.css";
 import { loginUser } from "../services/api";
 
 function Login({ setIsLoggedIn }) {

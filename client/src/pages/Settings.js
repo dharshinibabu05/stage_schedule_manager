@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Form, Button } from "react-bootstrap";
-import "./DarkPage.css";
+import "../styles/DarkPage.css";
 function Settings() {
   const [organizer, setOrganizer] = useState(
     localStorage.getItem("organizer") || ""

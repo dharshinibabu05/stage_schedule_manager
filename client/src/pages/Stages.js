@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Form, Button } from "react-bootstrap";
-import "./DarkPage.css";
+import "../styles/DarkPage.css";
 import { getEvents, getStages, createStage, deleteStage } from "../services/api";
 
 function Stages() {

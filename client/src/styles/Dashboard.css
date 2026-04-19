@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+/* ── Container ── */
+.dashboard-container {
+  padding: 24px 30px;
+  padding-bottom: 70px;
+  font-family: 'Poppins', sans-serif;
+  background: #0f0f1a;
+  min-height: 100vh;
+  color: #fff;
+}
+
+/* ── Stat Cards ── */
+.dashboard-card {
+  color: #fff;
+  padding: 25px;
+  border-radius: 18px;
+  text-align: center;
+  cursor: pointer;
+  background: linear-gradient(145deg, rgba(50,20,80,0.95), rgba(80,10,120,0.95));
+  box-shadow: 0 8px 20px rgba(255,0,255,0.25);
+  transition: all 0.35s ease;
+  border: 1px solid rgba(255,255,255,0.12);
+}
+
+@media (hover: hover) {
+  .dashboard-card:hover {
+    transform: translateY(-10px) scale(1.04);
+    box-shadow: 0 16px 40px rgba(255,0,255,0.5), 0 0 20px rgba(0,255,255,0.3);
+    background: linear-gradient(145deg, rgba(80,30,120,0.95), rgba(120,10,160,0.95));
+  }
+}
+
+.dashboard-card .card-value        { font-size: 2rem; font-weight: 700; margin-bottom: 4px; }
+.dashboard-card .card-value.pink   { color: #ff5cff; }
+.dashboard-card .card-value.cyan   { color: #4cc9f0; }
+.dashboard-card .card-value.yellow { color: #f8c300; }
+.dashboard-card .card-value.red    { color: #ff5c5c; }
+.dashboard-card .card-value.green  { color: #00ffaa; }
+
+.dashboard-card h5 {
+  font-size: 0.9rem;
+  color: #c0c0e0;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+/* ── Performance List ── */
+.performance-list {
+  background: rgba(30, 30, 60, 0.95);
+  padding: 25px;
+  border-radius: 18px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+  margin-top: 30px;
+  border-left: 4px solid #ff00ff;
+}
+
+.performance-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  border-radius: 10px;
+  transition: all 0.25s ease;
+  color: #fff;
+}
+
+.performance-item:last-child { border-bottom: none; }
+
+@media (hover: hover) {
+  .performance-item:hover {
+    transform: translateX(6px);
+    background: linear-gradient(90deg, rgba(255,0,255,0.08), rgba(0,255,255,0.08));
+  }
+}
+
+.performance-item strong { color: #fff; font-size: 0.95rem; }
+
+/* ══════════════════════════════════════════════════════
+   TABLE inside dashboard (Analytics.js uses .table here)
+   Bootstrap 5 uses CSS vars on > * > * so we override all
+═══════════════════════════════════════════════════════ */
+
+.dashboard-container .table {
+  --bs-table-bg:            #141428 !important;
+  --bs-table-color:         #e0e0ff !important;
+  --bs-table-border-color:  rgba(255,255,255,0.06) !important;
+  --bs-table-striped-bg:    #1a1a35 !important;
+  --bs-table-striped-color: #e0e0ff !important;
+  --bs-table-hover-bg:      rgba(255, 0, 255, 0.1) !important;
+  --bs-table-hover-color:   #ffffff !important;
+  background-color: #141428 !important;
+  color: #e0e0ff !important;
+}
+
+.dashboard-container .table > :not(caption) > * > * {
+  background-color: #141428 !important;
+  color: #e0e0ff !important;
+  border-color: rgba(255,255,255,0.06) !important;
+  box-shadow: none !important;
+}
+
+.dashboard-container .table thead > tr > th {
+  background: linear-gradient(145deg, #4b0066, #8a00cc) !important;
+  color: #ffffff !important;
+  border-color: rgba(255,255,255,0.15) !important;
+  font-weight: 600;
+  font-size: 0.85rem;
+  padding: 12px 16px;
+}
+
+.dashboard-container .table tbody > tr:nth-child(even) > td {
+  background-color: #1a1a35 !important;
+}
+
+.dashboard-container .table tbody > tr > td {
+  color: #e0e0ff !important;
+  padding: 12px 16px;
+  vertical-align: middle;
+}
+
+.dashboard-container .table-hover > tbody > tr:hover > * {
+  background-color: rgba(255, 0, 255, 0.1) !important;
+  color: #ffffff !important;
+}

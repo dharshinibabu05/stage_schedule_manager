@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import "./Dashboard.css";
+import "../styles/Dashboard.css";
 import { getSchedules } from "../services/api";
 
 function PerformerView() {

@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Form, Button, Alert } from "react-bootstrap";
-import "./DarkPage.css";
+import "../styles/DarkPage.css";
 
 function Profile() {
   const [user, setUser] = useState(null);

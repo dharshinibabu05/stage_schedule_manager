@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Form, Button } from "react-bootstrap";
-import "./DarkPage.css";
+import "../styles/DarkPage.css";
 import { getTasks, createTask, updateTask, deleteTask, getStages, getUsers } from "../services/api";
 import { addNotification } from "../components/NotificationBell";
 

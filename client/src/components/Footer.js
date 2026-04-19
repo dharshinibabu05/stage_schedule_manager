@@ -1,17 +1,16 @@
+import "./Footer.css";
+
 function Footer() {
   return (
-    <footer
-      style={{
-        backgroundColor: "#010c16",
-        color: "white",
-        textAlign: "center",
-        padding: "10px",
-        position: "fixed",
-        bottom: "0",
-        width: "100%"
-      }}
-    >
-      © 2026 Stage Schedule Manager | All Rights Reserved
+    <footer className="app-footer">
+      <div className="footer-inner">
+        <span className="footer-logo">🎭 StageScheduler</span>
+        <span className="footer-copy">© 2026 Stage Schedule Manager · All Rights Reserved</span>
+        <div className="footer-pulse">
+          <span className="pulse-dot" />
+          <span className="pulse-label">Live</span>
+        </div>
+      </div>
     </footer>
   );
 }

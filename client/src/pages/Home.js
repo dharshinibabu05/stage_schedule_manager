@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import "./Dashboard.css";
+import "../styles/Dashboard.css";
 import { getEvents, getStages, getSchedules, getTasks } from "../services/api";
 import { useSocket } from "../hooks/useSocket";
 

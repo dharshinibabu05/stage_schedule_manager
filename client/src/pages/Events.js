@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Form, Button, Table } from "react-bootstrap";
-import "./DarkPage.css";
+import "../styles/DarkPage.css";
 import { getEvents, createEvent, deleteEvent } from "../services/api";
 
 function Events() {

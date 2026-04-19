@@ -1,0 +1,170 @@
+.dark-page {
+  background-color: #0f0f1a;
+  min-height: 100vh;
+  padding: 30px;
+  padding-bottom: 70px;
+  color: #ffffff;
+}
+
+.dark-page h2 {
+  color: #ff5cff;
+  margin-bottom: 25px;
+}
+
+/* ── Bootstrap form overrides ── */
+.dark-page .form-control,
+.dark-page .form-select {
+  background-color: #1a1a2e !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  color: #ffffff !important;
+}
+
+.dark-page .form-control:focus,
+.dark-page .form-select:focus {
+  border-color: #ff5cff !important;
+  box-shadow: 0 0 10px rgba(255, 92, 255, 0.5) !important;
+  background-color: #1a1a2e !important;
+}
+
+.dark-page .form-label {
+  color: #ff5cff !important;
+}
+
+.dark-page .form-select option {
+  background-color: #1a1a2e;
+  color: #ffffff;
+}
+
+/* ══════════════════════════════════════════════════════
+   TABLE — Override ALL Bootstrap 5 white backgrounds
+   Bootstrap 5 uses CSS variables on each cell (> * > *)
+   so we must target that selector too.
+═══════════════════════════════════════════════════════ */
+
+/* CSS variable overrides (Bootstrap 5 key pattern) */
+.dark-page .table {
+  --bs-table-bg:            #141428 !important;
+  --bs-table-color:         #e0e0ff !important;
+  --bs-table-border-color:  rgba(255,255,255,0.06) !important;
+  --bs-table-striped-bg:    #1a1a35 !important;
+  --bs-table-striped-color: #e0e0ff !important;
+  --bs-table-hover-bg:      rgba(255, 0, 255, 0.1) !important;
+  --bs-table-hover-color:   #ffffff !important;
+  --bs-table-active-bg:     rgba(255, 0, 255, 0.15) !important;
+  --bs-table-active-color:  #ffffff !important;
+  background-color: #141428 !important;
+  color: #e0e0ff !important;
+  border-color: rgba(255,255,255,0.06) !important;
+}
+
+/* Every cell — the Bootstrap 5 "nuclear" selector */
+.dark-page .table > :not(caption) > * > * {
+  background-color: #141428 !important;
+  color: #e0e0ff !important;
+  border-color: rgba(255,255,255,0.06) !important;
+  box-shadow: none !important;
+}
+
+/* thead */
+.dark-page .table thead > tr > th,
+.dark-page .table > thead > tr > th {
+  background: linear-gradient(145deg, #4b0066, #8a00cc) !important;
+  color: #ffffff !important;
+  border-color: rgba(255,255,255,0.15) !important;
+  font-weight: 600;
+  font-size: 0.85rem;
+  letter-spacing: 0.3px;
+  padding: 12px 16px;
+}
+
+/* tbody rows alternating */
+.dark-page .table tbody > tr:nth-child(even) > td {
+  background-color: #1a1a35 !important;
+}
+
+/* tbody cells */
+.dark-page .table tbody > tr > td {
+  color: #e0e0ff !important;
+  border-color: rgba(255,255,255,0.06) !important;
+  padding: 12px 16px;
+  vertical-align: middle;
+}
+
+/* hover */
+.dark-page .table-hover > tbody > tr:hover > * {
+  --bs-table-color-state: #ffffff;
+  --bs-table-bg-state: rgba(255, 0, 255, 0.1);
+  background-color: rgba(255, 0, 255, 0.1) !important;
+  color: #ffffff !important;
+}
+
+/* .table-dark variant */
+.dark-page .table-dark {
+  --bs-table-bg:    #1a1a2e !important;
+  --bs-table-color: #ffffff !important;
+}
+
+.dark-page .table-dark > :not(caption) > * > * {
+  background-color: #1a1a2e !important;
+  color: #ffffff !important;
+  border-color: rgba(255,255,255,0.1) !important;
+}
+
+.dark-page .table-dark thead > tr > th {
+  background: linear-gradient(145deg, #4b0066, #8a00cc) !important;
+  color: #ffffff !important;
+}
+
+/* Responsive wrapper */
+.dark-page .table-responsive {
+  background-color: #141428;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.08);
+  overflow: hidden;
+}
+
+/* ══════════════════════════════════════════════════════
+   CUSTOM TABLE (.custom-table used in Events.js)
+═══════════════════════════════════════════════════════ */
+
+.custom-table {
+  --bs-table-bg:            #141428 !important;
+  --bs-table-color:         #e0e0ff !important;
+  --bs-table-border-color:  rgba(255,255,255,0.06) !important;
+  --bs-table-striped-bg:    #1a1a35 !important;
+  --bs-table-hover-bg:      rgba(255, 0, 255, 0.1) !important;
+  --bs-table-hover-color:   #ffffff !important;
+  background-color: #141428 !important;
+  color: #e0e0ff !important;
+}
+
+.custom-table > :not(caption) > * > * {
+  background-color: #141428 !important;
+  color: #e0e0ff !important;
+  border-color: rgba(255,255,255,0.06) !important;
+  box-shadow: none !important;
+}
+
+.custom-table thead > tr > th {
+  background: linear-gradient(145deg, #4b0066, #8a00cc) !important;
+  color: #ffffff !important;
+  border-color: rgba(255,255,255,0.15) !important;
+  font-weight: 600;
+  padding: 12px 16px;
+}
+
+.custom-table tbody > tr:nth-child(even) > td {
+  background-color: #1a1a35 !important;
+}
+
+.custom-table tbody > tr > td {
+  color: #e0e0ff !important;
+  border-color: rgba(255,255,255,0.06) !important;
+  padding: 12px 16px;
+  vertical-align: middle;
+}
+
+.custom-table tbody > tr:hover > * {
+  background-color: rgba(255, 0, 255, 0.1) !important;
+  color: #ffffff !important;
+}
