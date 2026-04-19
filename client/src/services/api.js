@@ -2,7 +2,7 @@
 // Drop this file in your React project at: src/services/api.js
 // This replaces all localStorage usage with real API calls.
 
-const BASE_URL = "http://localhost:5000/api";
+const BASE_URL = "https://stage-schedule-manager-backend.onrender.com";
 
 // ─── Get stored token ─────────────────────────────────────────────────────────
 const getToken = () => localStorage.getItem("token");
