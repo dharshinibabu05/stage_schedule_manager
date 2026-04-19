@@ -10,10 +10,11 @@ dotenv.config();
 const app = express();
 const server = http.createServer(app);
 
-// ✅ Allowed origins (LOCAL + VERCEL)
+// ✅ Allowed origins (LOCAL + ALL VERCEL LINKS)
 const allowedOrigins = [
   "http://localhost:3000",
-  "https://stage-schedule-manager-9u14jha4z.vercel.app"
+  "https://stage-schedule-manager-9u14jha4z.vercel.app",
+  "https://stage-schedule-manager.vercel.app"
 ];
 
 // ─── Socket.io Setup ─────────────────────────────────────────
@@ -40,7 +41,13 @@ io.on("connection", (socket) => {
 
 // ─── Middleware ───────────────────────────────────────────────
 app.use(cors({
-  origin: allowedOrigins,
+  origin: function (origin, callback) {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error("CORS not allowed"));
+    }
+  },
   methods: ["GET", "POST", "PUT", "DELETE"],
   credentials: true
 }));
