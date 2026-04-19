@@ -14,7 +14,8 @@ const server = http.createServer(app);
 const allowedOrigins = [
   "http://localhost:3000",
   "https://stage-schedule-manager-9u14jha4z.vercel.app",
-  "https://stage-schedule-manager.vercel.app"
+  "https://stage-schedule-manager.vercel.app",
+  "https://stage-schedule-manager-anbudharshini2134-8812s-projects.vercel.app"
 ];
 
 // ─── Socket.io Setup ─────────────────────────────────────────
