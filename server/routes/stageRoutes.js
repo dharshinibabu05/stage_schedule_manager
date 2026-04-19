@@ -5,7 +5,7 @@ const {
   getStages,
   updateStage,
   deleteStage,
-} = require("../controllers/stageController");
+} = require("../controllers/StageController");
 const { protect, authorize } = require("../middleware/authMiddleware");
 
 router.route("/")

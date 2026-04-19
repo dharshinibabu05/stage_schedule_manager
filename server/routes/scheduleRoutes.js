@@ -6,7 +6,7 @@ const {
   getScheduleById,
   updateSchedule,
   deleteSchedule,
-} = require("../controllers/scheduleController");
+} = require("../controllers/ScheduleController");
 const { protect, authorize } = require("../middleware/authMiddleware");
 
 router.route("/")
