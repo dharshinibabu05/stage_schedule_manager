@@ -10,15 +10,22 @@ dotenv.config();
 const app = express();
 const server = http.createServer(app);
 
-// ─── Socket.io Setup ─────────────────────────────────────────────────────────
+// ✅ Allowed origins (LOCAL + ALL VERCEL LINKS)
+const allowedOrigins = [
+  "http://localhost:3000",
+  "https://stage-schedule-manager-9u14jha4z.vercel.app",
+  "https://stage-schedule-manager.vercel.app"
+];
+
+// ─── Socket.io Setup ─────────────────────────────────────────
 const io = new Server(server, {
   cors: {
-    origin: "http://localhost:3000",
+    origin: allowedOrigins,
     methods: ["GET", "POST", "PUT", "DELETE"],
   },
 });
 
-// Make io accessible in routes via req.io
+// Make io accessible in routes
 app.use((req, res, next) => {
   req.io = io;
   next();
@@ -26,16 +33,28 @@ app.use((req, res, next) => {
 
 io.on("connection", (socket) => {
   console.log("🔌 Client connected:", socket.id);
+
   socket.on("disconnect", () => {
     console.log("🔌 Client disconnected:", socket.id);
   });
 });
 
-// ─── Middleware ───────────────────────────────────────────────────────────────
-app.use(cors({ origin: "http://localhost:3000" }));
+// ─── Middleware ───────────────────────────────────────────────
+app.use(cors({
+  origin: function (origin, callback) {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error("CORS not allowed"));
+    }
+  },
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  credentials: true
+}));
+
 app.use(express.json());
 
-// ─── Routes ──────────────────────────────────────────────────────────────────
+// ─── Routes ──────────────────────────────────────────────────
 app.use("/api/auth",      require("./routes/authRoutes"));
 app.use("/api/events",    require("./routes/eventRoutes"));
 app.use("/api/stages",    require("./routes/stageRoutes"));
@@ -43,18 +62,18 @@ app.use("/api/schedules", require("./routes/scheduleRoutes"));
 app.use("/api/tasks",     require("./routes/taskRoutes"));
 app.use("/api/users",     require("./routes/userRoutes"));
 
-// ─── Health Check ─────────────────────────────────────────────────────────────
+// ─── Health Check ─────────────────────────────────────────────
 app.get("/", (req, res) => {
   res.json({ message: "🎭 Stage Scheduler API is running!" });
 });
 
-// ─── MongoDB Connection ───────────────────────────────────────────────────────
+// ─── MongoDB Connection ───────────────────────────────────────
 mongoose
   .connect(process.env.MONGO_URI)
   .then(() => {
     console.log("✅ MongoDB Connected");
     server.listen(process.env.PORT, () => {
-      console.log(`🚀 Server running on http://localhost:${process.env.PORT}`);
+      console.log(`🚀 Server running on port ${process.env.PORT}`);
     });
   })
   .catch((err) => {
